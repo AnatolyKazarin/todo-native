@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
-import {View, StyleSheet, TextInput, Button, Alert, Keyboard } from 'react-native'
-import { AntDesign } from '@expo/vector-icons'
-import { THEME } from '../theme.js'
+import React, { useState } from "react"
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  Button,
+  Alert,
+  Keyboard,
+} from "react-native"
+import { AntDesign } from "@expo/vector-icons"
+import { THEME } from "../theme.js"
 
 export const AddTodo = ({ onSubmit }) => {
-  const [value, setValue] = useState('')
-  
+  const [value, setValue] = useState("")
+
   const pressHandler = () => {
     if (value.trim()) {
       onSubmit(value)
-      setValue('')
+      setValue("")
       Keyboard.dismiss()
     } else {
       Alert.alert("Название дела не может быть пустым")
@@ -17,13 +24,13 @@ export const AddTodo = ({ onSubmit }) => {
   }
   return (
     <View style={styles.block}>
-      <TextInput 
-        style={styles.input} 
+      <TextInput
+        style={styles.input}
         onChangeText={setValue}
         value={value}
-        placeholder='Введите запланированное дело!'
+        placeholder="Новое дело"
         autoCorrect={false}
-        autoCapitalize='none'
+        autoCapitalize="none"
       />
       <AntDesign.Button onPress={pressHandler} name="pluscircleo">
         Добавить
@@ -34,16 +41,16 @@ export const AddTodo = ({ onSubmit }) => {
 
 const styles = StyleSheet.create({
   block: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 15
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 15,
   },
   input: {
-    width: '60%',
+    width: "60%",
     padding: 10,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     borderBottomWidth: 2,
-    borderBottomColor: THEME.MAIN_COLOR
-  }
+    borderBottomColor: THEME.MAIN_COLOR,
+  },
 })
