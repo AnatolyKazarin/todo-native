@@ -4,4 +4,4 @@
 
 React, React Native, Expo, Expo-Font, Firebase
 
-<img width="250" alt="Todo App Demo" src="https://raw.githubusercontent.com/AnatolyKazarin/todo-native/master/Todo.gif">
+<img width="300" alt="Todo App Demo" src="https://raw.githubusercontent.com/AnatolyKazarin/todo-native/master/Todo.gif">
